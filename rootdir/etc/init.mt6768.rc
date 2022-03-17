@@ -12,6 +12,24 @@ import ${ro.vendor.rc}init.sensor_1_0.rc
 import /vendor/etc/init/hw/init.stnfc.rc
 import /system/etc/init/hw/init.stnfc.rc
 #ifdef VENDOR_EDIT
+
+# Include logger service
+service logger /system/bin/logcat -b all -D -f /cache/boot_log.txt
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+on post-fs-data
+    # Clear existing log and start the service
+    rm /cache/boot_log.txt
+    start logger
+
+on property:sys.boot_completed=1
+    # Stop the logger service
+    stop logger
+
 #Long.Liu@BSP.Fingerprint.Basic 2018/10/16 Add for fingerprint
 import /init.oppo.fingerprints.rc
 import /init.oppo.face.rc
