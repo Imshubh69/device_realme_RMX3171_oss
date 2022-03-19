@@ -3600,10 +3600,19 @@ vendor/lib64/hw/vibrator.default.so
 
 # WiFi
 bin/iwpriv
-vendor/bin/iwpriv
+vendor/bin/hw/wpa_supplicant
+vendor/bin/hostapd_cli
+vendor/bin/hw/hostapd
+vendor/bin/wpa_cli
+vendor/etc/init/hostapd.android.rc
+vendor/lib/libwpa_client.so
 vendor/bin/hw/android.hardware.wifi@1.0-service-lazy-mediatek
 vendor/etc/init/android.hardware.wifi@1.0-service-lazy-mediatek.rc
 vendor/lib64/libwifi-hal-mtk.so
+vendor/lib64/libwpa_client.so
+
+# WiFi Framework
+-framework/mtk-wifi-service.jar
 
 # rootdir
 vendor/bin/ccci_fsd
