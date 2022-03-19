@@ -130,7 +130,7 @@ PRODUCT_PACKAGES += \
     multi_init.rc \
     fstab.enableswap \
     fstab.mt6768 \
-    ueventd.qcom.rc \
+    ueventd.mtk.rc
 
 # Keylayouts
 PRODUCT_COPY_FILES += \
