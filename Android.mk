@@ -19,6 +19,20 @@ LOCAL_PATH := $(call my-dir)
 ifeq ($(TARGET_DEVICE),RMX3171)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
+GATEKEEPER_SYMLINK += $(TARGET_OUT_VENDOR)/lib/hw/gatekeeper.default.so
+GATEKEEPER_SYMLINK += $(TARGET_OUT_VENDOR)/lib64/hw/gatekeeper.default.so
+$(GATEKEEPER_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf libSoftGatekeeper.so $@
+
+GATEKEEPER_SYMLINKK += $(TARGET_OUT_VENDOR)/lib/hw/gatekeeper.mt6768.so
+GATEKEEPER_SYMLINKK += $(TARGET_OUT_VENDOR)/lib/hw/gatekeeper.oppo6769.so
+GATEKEEPER_SYMLINKK += $(TARGET_OUT_VENDOR)/lib64/hw/gatekeeper.mt6768.so
+GATEKEEPER_SYMLINKK += $(TARGET_OUT_VENDOR)/lib64/hw/gatekeeper.oppo6769.so
+$(GATEKEEPER_SYMLINK): $(LOCAL_INSTALLED_MODULE)
+	@mkdir -p $(dir $@)
+	$(hide) ln -sf libMcGatekeeper.so $@
+
 ALL_DEFAULT_INSTALLED_MODULES += $(GATEKEEPER_SYMLINK)
 
 VULKAN_SYMLINK += $(TARGET_OUT_VENDOR)/lib/hw/vulkan.mt6768.so
