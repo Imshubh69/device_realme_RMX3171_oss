@@ -47,6 +47,10 @@ PRODCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
 
+# RenderScript
+PRODUCT_PACKAGES += \
+    android.hardware.renderscript@1.0-impl
+
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
