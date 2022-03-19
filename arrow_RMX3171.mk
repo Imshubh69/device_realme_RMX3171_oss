@@ -22,10 +22,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/realme/RMX3171/device.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+$(call inherit-product, vendor/arrow/config/common.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := lineage_RMX3171
+PRODUCT_NAME := arrow_RMX3171
 PRODUCT_DEVICE := RMX3171
 PRODUCT_BRAND := realme
 PRODUCT_MODEL := Realme Narzo 30A

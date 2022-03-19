@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_RMX3171.mk
+    $(LOCAL_DIR)/arrow_RMX3171.mk
