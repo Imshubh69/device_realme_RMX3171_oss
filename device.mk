@@ -54,6 +54,7 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
+    libtinyxml \
     GoogleCameraGo
 
 PRODUCT_COPY_FILES += \
